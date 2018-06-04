@@ -12397,13 +12397,13 @@ round("moon")</code></pre>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Numeric-data-types">Numeric data types<a class="anchor-link" href="#Numeric-data-types">&#182;</a></h3>
+<h3 id="What-are-types?">What are types?<a class="anchor-link" href="#What-are-types?">&#182;</a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[103]:</div>
+<div class="prompt input_prompt">In&nbsp;[137]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#</span>
@@ -12413,7 +12413,139 @@ round("moon")</code></pre>
 </div>
 </div>
 
-</div></section></section>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Numeric-data-types">Numeric data types<a class="anchor-link" href="#Numeric-data-types">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[136]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># </span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div><aside class="notes">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Key-points">Key points<a class="anchor-link" href="#Key-points">&#182;</a></h3><ul>
+<li>3 types of numbers: int, float, complex</li>
+<li>Integers are integers, no decimal point (e.g., <code>3, -4, 10</code>, etc)</li>
+<li>Floats have decimal points (<code>1.0, 1.3, 1e-1, 1e10</code>)</li>
+<li>Complex are defined as <code>a + bj</code><ul>
+<li>a and b are floats</li>
+<li>get real and imaginary parts by <code>float_number.real, float_number.imag</code></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>Normal arithmetic operations: <code>+, -, *, /, **</code> (power), <code>%</code> (modulo)</li>
+<li>Numbers "play nicely" with each other<ul>
+<li>Can free add, subtract, multiply without worrying about the type</li>
+<li>float/float and complex/complex conserve type</li>
+<li>int/int returns a float</li>
+<li>int//int is integer division (rounds down)</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>Create from string with <code>int(), float(), complex()</code></li>
+<li>When it makes sense, convert between them with <code>int(), float(), complex()</code></li>
+</ul>
+
+</div>
+</div>
+</div>
+</aside></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Iterable-data-types">Iterable data types<a class="anchor-link" href="#Iterable-data-types">&#182;</a></h3>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Groups of things</li>
+<li>Can go through the things one-by-one (<strong>iteration</strong>)</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>We will cover iteration in more detail later today</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[149]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+
+<span class="n">a</span> <span class="o">+=</span> <span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+
+<span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+
+<span class="n">b</span> <span class="o">+=</span> <span class="p">(</span><span class="mi">4</span><span class="p">,)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1, 2, 3] 2160017112008
+[1, 2, 3, 4] 2160017112008
+(1, 2, 3) 2160017150960
+(1, 2, 3, 4) 2160017141096
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
 </div>
 </div>
 
